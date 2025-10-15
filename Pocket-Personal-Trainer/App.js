@@ -1,68 +1,113 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, TextInput, Platform, Pressable, ScrollView} from 'react-native';
+import { StyleSheet, Text, View, TextInput, Platform, Pressable, ScrollView, ActivityIndicator} from 'react-native';
 import {useState} from 'react'
 
 const statusBarHeight = StatusBar.currentHeight
 
 export default function App() {
 
-  const [loading,setLoading] = useState(true);
-  
+  //condicionais de estado do formuláro 
+  const [nivel, setNivel] = useState("");
+  const [objetivo, setObjetivo] = useState("");
+  const [dias, setDias] = useState("");
+  const [local, setLocal] = useState("");
+  const [equipamentos, setEquipamentos] = useState("");
+  const [tempo, setTempo] = useState("");
+
+  // condicionais de estado do roteiro gerado
+  const [loading,setLoading] = useState(false);
+  const [roteiro, setRoteiro] = useState("");
+
+  function gerarRoteiro(){
+    
+  }
+
   return (
 
 
     <View style={styles.container}>
 
-      <StatusBar style="auto" />
+        <StatusBar style="auto" />
 
-      <Text style={styles.heading}>Personal Trainer de Bolso</Text>
+        <Text style={styles.heading}>Personal Trainer de Bolso</Text>
 
       <View style={styles.form}>
+
+        <Text style={styles.label}>Qual seu nível de experiência?</Text>
+        <TextInput
+          placeholder="Ex: iniciante, intermediário, avançado"
+          style={styles.input}
+          value= {nivel}
+          onChangeText={(text) => setNivel(text)}
+        />
 
         <Text style={styles.label}>Qual seu principal objetivo?</Text>
         <TextInput
           placeholder="Ex: hipertrofia, emagrecimento ou resistência muscular"
           style={styles.input}
+          value= {objetivo}
+          onChangeText={(text) => setObjetivo(text)}
         />
 
         <Text style={styles.label}>Quais os dias da semana você pode treinar?</Text>
         <TextInput
           placeholder="Ex: segunda e quarta, segunda a domingo"
           style={styles.input}
+          value= {dias}
+          onChangeText={(text) => setDias(text)}
         />
 
         <Text style={styles.label}>Onde vai treinar?</Text>
         <TextInput
           placeholder="Ex: academia, em casa ou calistenia"
           style={styles.input}
+          value= {local}
+          onChangeText={(text) => setLocal(text)}
         />
 
         <Text style={styles.label}>Quais equipamentos tem à sua disposição?</Text>
         <TextInput
           placeholder="Ex: academia completa, somente halteres ou próprio corpo"
           style={styles.input}
+          value= {equipamentos}
+          onChangeText={(text) => setEquipamentos(text)}
         />
 
         <Text style={styles.label}>Quanto tempo deseja por treino?</Text>
         <TextInput
           placeholder="Ex: 30 minutos, 45 minutos ou 60 minutos"
           style={styles.input}
+          value= {tempo}
+          onChangeText={(text) => setTempo(text)}
         />
 
       </View>
 
-      <Pressable style={styles.btn}>
+      <Pressable style={styles.btn} onPress={gerarRoteiro}>
         <Text style={styles.btnText}>GERAR TREINO PERSONALIZADO!</Text>
       </Pressable>
 
       <ScrollView style={styles.containerScroll} showsVerticalScrollIndicator={false}>
-        <View style={styles.content}>
+
+        {loading && (
+          <View style={styles.content}>
+
+          <Text style={styles.roteiro}> Analisando seu perfil e gerando seu treino ideal</Text>
+
+          <ActivityIndicator color=" red " size="large" />
+
+        </View>
+        )}
+
+        {roteiro && (
+          <View style={styles.content}>
 
           <Text style={styles.titleOne}>Roteiro do seu treino </Text>
 
-          <Text style={styles.roteiro}> aqui aparece o treino </Text>
+          <Text style={styles.roteiro}> {roteiro} </Text>
 
         </View>
+        )}
       </ScrollView>
 
     </View>
@@ -146,5 +191,6 @@ const styles = StyleSheet.create({
   roteiro:{
     textAlign:"center",
     fontSize: 16,
+    marginBottom: 10,
   },
 });
