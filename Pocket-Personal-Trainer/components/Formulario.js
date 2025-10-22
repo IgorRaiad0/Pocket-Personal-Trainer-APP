@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Text, TextInput, Pressable } from 'react-native';
 
 export default function Formulario({
@@ -106,5 +105,7 @@ const formStyles = {
     color: "#fff",
     fontSize:18,
     fontWeight:'bold',
+    textAlign: 'center' 
+    
   },
 };

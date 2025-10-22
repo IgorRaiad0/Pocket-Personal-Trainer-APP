@@ -1,11 +1,15 @@
-import React from 'react';
 import { View, Text, Pressable } from 'react-native';
+import Markdown from 'react-native-markdown-display';
+
+const markdownStyles = { }
 
 export default function ExibirTreino({ roteiro, voltarAoFormulario }) {
   return (
     <View style={displayStyles.content}>
       <Text style={displayStyles.titleOne}>Roteiro do seu treino</Text>
-      <Text style={displayStyles.roteiro}>{roteiro}</Text>
+      <Markdown style={markdownStyles}>
+        {roteiro}
+      </Markdown>
       <Pressable style={displayStyles.btnVoltar} onPress={voltarAoFormulario}>
         <Text style={displayStyles.btnText}>GERAR NOVO TREINO</Text>
       </Pressable>

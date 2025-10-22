@@ -6,9 +6,10 @@ import axios from 'axios';
 import Formulario from './Formulario';
 import ExibirTreino from './ExibirTreino';
 
-const statusBarHeight = StatusBar.currentHeight;
+
 
 export default function GerarRoteiro() {
+  
   const [nivel, setNivel] = useState("");
   const [objetivo, setObjetivo] = useState("");
   const [dias, setDias] = useState("");
@@ -139,7 +140,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#d9dee2ff',
     alignItems: 'center',
-    paddingTop: 60,
+    paddingTop: 20,
   },
   heading: {
     fontSize: 24,
