@@ -1,13 +1,6 @@
 import { View, Text, TextInput, Pressable } from 'react-native';
 
-export default function Formulario({
-  nivel, setNivel,
-  objetivo, setObjetivo,
-  dias, setDias,
-  local, setLocal,
-  equipamentos, setEquipamentos,
-  tempo, setTempo,
-  gerarRoteiro
+export default function Formulario({nivel, setNivel,objetivo, setObjetivo,dias, setDias,local, setLocal,equipamentos, setEquipamentos,tempo, setTempo,gerarRoteiro
 }) {
   return (
     <>
