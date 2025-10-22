@@ -16,16 +16,12 @@ O Pocket Personal Trainer é um aplicativo móvel que gera rotinas de treino de 
 - **Google Gemini API:** Modelo de linguagem para a geração dos treinos.
 - **Axios:** Cliente HTTP para fazer as requisições à API do Gemini.
 
-## Screenshots
-![image](https://github.com/user-attachments/assets/d3930a7c-679b-433b-99f3-395c69d8b40c)
-![image](https://github.com/user-attachments/assets/883a39a1-894b-4b9c-b11d-0852f038400d)
-![image](https://github.com/user-attachments/assets/361a3c5d-931c-442c-89ba-f0051134993b)
 
 ## ⚙️ Instalação e Uso
 
 1. **Clone o repositório:**
    ```bash
-   git clone 
+   git clone https://github.com/IgorRaiad0/Pocket-Personal-Trainer-APP
    ```
 
 2. **Instale as dependências:**
