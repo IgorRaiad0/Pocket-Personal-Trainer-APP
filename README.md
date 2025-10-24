@@ -44,6 +44,9 @@ O Pocket Personal Trainer é um aplicativo móvel que gera rotinas de treino de 
 
    Use o aplicativo Expo Go no seu celular para escanear o QR Code e rodar o app.
 
+
+## Vídeo do APP: https://youtu.be/v7lOMbv1Ahw
+
 ## 📝 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
